@@ -975,6 +975,7 @@ addEventListener("scroll",()=>{
 },{ passive:true });
 
 /* Formulaire */
+const CRM_ENDPOINT = "https://ellizee-studio.vercel.app/api/public/lead";
 function wireForm(){
   const f = document.getElementById("cform");
   if (!f) return;
@@ -991,8 +992,11 @@ function handleSubmit(e){
   btn.disabled = true; btn.textContent = "Envoi…";
   const data = new URLSearchParams(new FormData(f));
   data.set("form-name", "contact");
-  fetch("/", { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body:data.toString() })
-    .then(r => { if (!r.ok) throw new Error(r.status); showThanks(f, nom); })
+  // 1) CRM ELLIZÉE Studio (le prospect arrive dans « À contacter »)  2) copie Netlify Forms si le site est sur Netlify
+  const toCrm = fetch(CRM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json" }, body:JSON.stringify(Object.fromEntries(data)) }).then(r => { if (!r.ok) throw new Error(r.status); });
+  const toHost = fetch("/", { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body:data.toString() }).then(r => { if (!r.ok) throw new Error(r.status); });
+  Promise.any([toCrm, toHost])
+    .then(() => showThanks(f, nom))
     .catch(() => {
       btn.disabled = false; btn.textContent = "Envoyer →";
       err.textContent = "Le message n'est pas parti. Réessayez dans un instant.";
