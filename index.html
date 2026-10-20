@@ -342,6 +342,10 @@ main{min-height:60vh}
 </div>
 
 <div class="veil" id="veil" aria-hidden="true"></div>
+<!-- Formulaire statique : permet à Netlify Forms de détecter le formulaire "contact" au déploiement -->
+<form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input name="bot-field"><input name="nom"><input name="entreprise"><input name="email"><input name="telephone"><textarea name="projet"></textarea><input name="budget">
+</form>
 <main id="app" tabindex="-1"></main>
 
 <footer class="ftr" role="contentinfo">
@@ -806,8 +810,9 @@ const PAGES = {
           <div><a class="btn" href="${BOOKING_URL}" target="_blank" rel="noopener">Prendre rendez-vous →</a></div>
         </div>
       </aside>
-      <!-- [FORM_ENDPOINT] Brancher l'envoi (Formspree, Netlify Forms, API…) dans handleSubmit() -->
-      <form class="contact-form" id="cform" novalidate>
+      <!-- Envoi via Netlify Forms (formulaire "contact") : voir handleSubmit() -->
+      <form class="contact-form" id="cform" name="contact" novalidate>
+        <p hidden><label>Ne pas remplir <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" autocomplete="name" required></div>
         <div class="field"><label for="f-ent">Entreprise</label><input id="f-ent" name="entreprise" autocomplete="organization"></div>
         <div class="field"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
@@ -982,8 +987,18 @@ function handleSubmit(e){
   if (!nom || !proj){ err.textContent = "Indiquez votre nom et quelques mots sur votre projet."; return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){ err.textContent = "Vérifiez votre adresse email."; f.email.focus(); return; }
   err.textContent = "";
-  /* [FORM_ENDPOINT] — exemple :
-     fetch("https://formspree.io/f/XXXX",{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}) */
+  const btn = f.querySelector('button[type="submit"]');
+  btn.disabled = true; btn.textContent = "Envoi…";
+  const data = new URLSearchParams(new FormData(f));
+  data.set("form-name", "contact");
+  fetch("/", { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body:data.toString() })
+    .then(r => { if (!r.ok) throw new Error(r.status); showThanks(f, nom); })
+    .catch(() => {
+      btn.disabled = false; btn.textContent = "Envoyer →";
+      err.textContent = "Le message n'est pas parti. Réessayez dans un instant.";
+    });
+}
+function showThanks(f, nom){
   f.innerHTML = `<div class="form-ok"><p class="voice" style="margin:0">Merci ${esc(nom.split(" ")[0])}.<br><em>Votre message est bien parti.</em></p><p class="muted" style="margin-top:18px">Nous revenons vers vous sous 48 heures ouvrées.</p></div>`;
 }
 
