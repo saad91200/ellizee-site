@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ELLIZÉE — Agence de publicité &amp; communication créative</title>
+<meta name="description" content="ELLIZÉE imagine des films, des campagnes et des prises de parole créatives pour les marques et les entreprises.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ELLIZÉE">
+<meta property="og:title" content="ELLIZÉE — Agence de publicité & communication créative">
+<meta property="og:description" content="ELLIZÉE imagine des films, des campagnes et des prises de parole créatives pour les marques et les entreprises.">
+<!-- [OG_IMAGE] Remplacer par l'URL absolue de votre image de partage (1200×630) -->
+<meta property="og:image" content="https://www.ellizee.fr/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Instrument+Serif:ital@0;1&display=swap">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0A0B'/%3E%3Cpath d='M8 7h16v4H12v3h11v4H12v3h12v4H8z' fill='%23F1F1EE'/%3E%3C/svg%3E">
+<style>
+/* Concept : une page coupée en deux, comme le logo. Papier au-dessus, nuit en dessous.
+   Grandes capitales larges, une serif italique pour la voix, une grille asymétrique 12 colonnes. */
+:root{
+  --paper:#F1F1EE;
+  --paper-2:#E4E4E0;
+  --ink:#0A0A0B;
+  --ink-2:#161618;
+  --grey:#86867F;
+  --grey-d:#5B5B56;
+  --accent:#A3895F;           /* laiton très discret : uniquement les petits repères */
+  --line-l:rgba(10,10,11,.14);
+  --line-d:rgba(241,241,238,.14);
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --f-body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{padding-inline:var(--gutter)}
+.dark{background:var(--ink);color:var(--paper)}
+
+/* ---------- Type ---------- */
+.display{font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 125;text-transform:uppercase;letter-spacing:-.02em;line-height:.9;text-wrap:balance;margin:0}
+.d-xxl{font-size:clamp(2.9rem,10.4vw,11.5rem)}
+.d-xl{font-size:clamp(2.4rem,7.2vw,7.6rem)}
+.d-l{font-size:clamp(1.9rem,4.6vw,4.6rem)}
+.d-m{font-size:clamp(1.4rem,2.6vw,2.4rem)}
+.serif{font-family:var(--f-serif);font-weight:400;text-transform:none;letter-spacing:0}
+.voice{font-family:var(--f-serif);font-size:clamp(1.7rem,3.6vw,3.4rem);line-height:1.08;letter-spacing:-.005em;text-wrap:balance;margin:0}
+.voice em{font-style:italic}
+.label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;font-variation-settings:"wdth" 110}
+.muted{color:var(--grey)}
+.lead{font-size:clamp(1.05rem,1.4vw,1.25rem);line-height:1.55;max-width:34em}
+p{max-width:38em}
+
+/* ---------- Header ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);mix-blend-mode:difference;color:#fff}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px var(--gutter)}
+.brand{display:inline-flex;align-items:center}
+/* [LOGO] Remplacez le contenu de .brand par votre fichier :
+   <img src="logo-ellizee.svg" alt="ELLIZÉE" style="height:22px"> */
+.wordmark{font-family:var(--f-display);font-weight:900;font-variation-settings:"wdth" 125;letter-spacing:.04em;font-size:1.15rem;line-height:1}
+.nav{display:flex;gap:clamp(18px,2.4vw,36px);align-items:center}
+.nav a{font-size:.82rem;letter-spacing:.06em;position:relative;padding-block:4px}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1);transform-origin:left}
+.nav .cta{border:1px solid currentColor;padding:9px 16px;border-radius:999px;transition:background .3s,color .3s}
+.nav .cta::after{display:none}
+.nav .cta:hover{background:#fff;color:#000}
+.burger{display:none;width:44px;height:44px;align-items:center;justify-content:flex-end}
+.burger span{display:block;width:28px;height:1px;background:currentColor;position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:100%;height:1px;background:currentColor;transition:transform .4s var(--ease)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+
+.mmenu{position:fixed;inset:0;z-index:60;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 22px) var(--gutter) calc(env(safe-area-inset-bottom,0px) + 28px);clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ease);visibility:hidden}
+.mmenu.open{clip-path:inset(0 0 0 0);visibility:visible}
+.mmenu-top{display:flex;justify-content:space-between;align-items:center}
+.mmenu nav{margin-top:auto;display:flex;flex-direction:column;gap:6px}
+.mmenu nav a{font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 125;text-transform:uppercase;font-size:clamp(2.2rem,11vw,3.6rem);line-height:1.02;letter-spacing:-.02em;display:flex;align-items:baseline;gap:14px}
+.mmenu nav a small{font-family:var(--f-body);font-size:.7rem;font-weight:400;letter-spacing:.14em;color:var(--grey)}
+.mmenu .m-cta{margin-top:36px;padding-top:20px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.close{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding:12px 0}
+
+@media (max-width:900px){.nav{display:none}.burger{display:inline-flex}}
+
+/* ---------- Page transition ---------- */
+main{min-height:60vh}
+.veil{position:fixed;inset:0;z-index:70;background:var(--ink);transform:translateY(100%);pointer-events:none}
+.veil.go{animation:veil .9s var(--ease)}
+@keyframes veil{0%{transform:translateY(100%)}45%,55%{transform:translateY(0)}100%{transform:translateY(-100%)}}
+.enter>*{animation:rise .9s var(--ease) both}
+.enter>*:nth-child(2){animation-delay:.06s}.enter>*:nth-child(3){animation-delay:.12s}
+@keyframes rise{from{transform:translateY(18px);opacity:.001}to{transform:none;opacity:1}}
+.rv{transition:transform 1s var(--ease),opacity 1s var(--ease)}
+.rv.pre{transform:translateY(34px);opacity:.001}
+
+/* ---------- Media components ---------- */
+.media{position:relative;overflow:hidden;background:var(--ink-2);width:100%;max-width:100%;isolation:isolate}
+.media video,.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.r-cine{aspect-ratio:21/9}.r-169{aspect-ratio:16/9}.r-45{aspect-ratio:4/5}.r-916{aspect-ratio:9/16}.r-11{aspect-ratio:1/1}.r-32{aspect-ratio:3/2}.r-23{aspect-ratio:2/3}
+@media (max-width:700px){.m-r-45{aspect-ratio:4/5}.m-r-916{aspect-ratio:9/16}.m-r-169{aspect-ratio:16/9}}
+.ph{position:absolute;inset:0;color:var(--paper);display:grid;place-items:center;
+  background:
+    radial-gradient(120% 90% at 30% 20%,rgba(255,255,255,.07),transparent 60%),
+    linear-gradient(180deg,#141416,#0B0B0C)}
+.ph::before{content:"";position:absolute;inset:0;opacity:.35;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.55'/></svg>")}
+.ph-frame{position:absolute;inset:clamp(12px,2.2vw,28px);pointer-events:none}
+.ph-frame i{position:absolute;width:18px;height:18px;border-color:rgba(241,241,238,.45);border-style:solid;border-width:0}
+.ph-frame i:nth-child(1){top:0;left:0;border-top-width:1px;border-left-width:1px}
+.ph-frame i:nth-child(2){top:0;right:0;border-top-width:1px;border-right-width:1px}
+.ph-frame i:nth-child(3){bottom:0;left:0;border-bottom-width:1px;border-left-width:1px}
+.ph-frame i:nth-child(4){bottom:0;right:0;border-bottom-width:1px;border-right-width:1px}
+.ph-meta{position:absolute;left:clamp(12px,2.2vw,28px);right:clamp(12px,2.2vw,28px);bottom:clamp(12px,2.2vw,28px);display:flex;justify-content:space-between;gap:12px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(241,241,238,.55);padding:0 26px}
+.ph-meta .rec::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:1px;animation:blink 2.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+.ph-center{text-align:center;display:grid;gap:10px;justify-items:center;padding:16px}
+.ph-play{width:58px;height:58px;border:1px solid rgba(241,241,238,.4);border-radius:50%;display:grid;place-items:center}
+.ph-play::after{content:"";border-left:11px solid rgba(241,241,238,.75);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:4px}
+.ph-play.img::after{border:0;width:16px;height:12px;border:1px solid rgba(241,241,238,.75);margin:0}
+.ph-tag{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(241,241,238,.8)}
+.ph-slot{font-size:.62rem;letter-spacing:.14em;color:rgba(241,241,238,.4);font-variant-numeric:tabular-nums}
+.ph-sm .ph-center{gap:6px}.ph-sm .ph-play{width:40px;height:40px}.ph-sm .ph-meta{display:none}
+
+/* ---------- Home ---------- */
+.hero{padding-top:clamp(120px,16vw,200px);padding-bottom:clamp(36px,5vw,64px)}
+.hero-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
+.hero h1{grid-column:1/-1}
+.hero-sub{grid-column:1/6;display:flex;gap:14px;align-items:baseline;margin-top:clamp(20px,3vw,40px)}
+.hero-sub .label{white-space:nowrap}
+.hero-meta{grid-column:9/-1;justify-self:end;text-align:right;margin-top:clamp(20px,3vw,40px)}
+.hero-video{margin-top:clamp(24px,3.4vw,48px);will-change:transform}
+@media (max-width:800px){.hero-sub,.hero-meta{grid-column:1/-1;justify-self:start;text-align:left}.hero-meta{margin-top:0}}
+
+.split-line{height:1px;background:var(--line-l)}
+.conviction{padding-block:clamp(90px,14vw,200px)}
+.conv-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.conv-grid .label{grid-column:1/3;padding-top:.8em}
+.conv-grid .voice{grid-column:3/12}
+.conv-grid .txt{grid-column:7/12;margin-top:clamp(36px,5vw,72px);display:grid;gap:1em;color:var(--grey-d)}
+@media (max-width:800px){.conv-grid>*{grid-column:1/-1!important}}
+
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;padding-block:clamp(80px,10vw,140px) clamp(40px,5vw,72px)}
+.sec-head .label{grid-column:1/3;align-self:start;padding-top:.6em}
+.sec-head h2{grid-column:3/-1}
+@media (max-width:800px){.sec-head>*{grid-column:1/-1!important}}
+
+/* Projects: editorial covers */
+.covers{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:clamp(70px,9vw,140px);padding-bottom:clamp(90px,12vw,170px)}
+.cover{display:block;grid-column:span 12}
+.cover:nth-child(1){grid-column:1/-1}
+.cover:nth-child(2){grid-column:1/8}
+.cover:nth-child(3){grid-column:9/-1;margin-top:clamp(0px,14vw,240px)}
+.cover:nth-child(4){grid-column:1/6}
+.cover:nth-child(5){grid-column:7/-1;margin-top:clamp(0px,10vw,180px)}
+.cover .media{transition:clip-path 1s var(--ease)}
+.cover .media>*{transition:transform 1.4s var(--ease)}
+.cover:hover .media>*{transform:scale(1.035)}
+.cover-info{display:grid;grid-template-columns:auto 1fr auto;gap:8px 24px;align-items:baseline;padding-top:18px;border-top:1px solid var(--line-d);margin-top:18px}
+.cover-client{font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:.02em;font-size:.95rem}
+.cover-title{font-family:var(--f-serif);font-size:clamp(1.5rem,2.6vw,2.4rem);line-height:1.05;grid-column:1/-1;order:3}
+.cover-cat{color:var(--grey)}
+.cover-arrow{transition:transform .5s var(--ease)}
+.cover:hover .cover-arrow{transform:translateX(6px)}
+.cover-desc{grid-column:1/-1;order:4;color:var(--grey);font-size:.95rem;max-width:36em}
+@media (max-width:800px){.cover{grid-column:1/-1!important;margin-top:0!important}}
+
+/* Visuels : mosaïque éditoriale */
+.visuals{columns:3;column-gap:24px;padding-bottom:clamp(80px,10vw,150px)}
+.visuals figure{margin:0 0 24px;break-inside:avoid;overflow:hidden;background:var(--paper-2)}
+.visuals img{display:block;width:100%;height:auto;transition:transform 1.4s var(--ease),filter .6s}
+.visuals figure:hover img{transform:scale(1.03)}
+@media (max-width:900px){.visuals{columns:2;column-gap:14px}.visuals figure{margin-bottom:14px}}
+@media (max-width:520px){.visuals{columns:1}}
+
+/* What we create: index list */
+.index{border-top:1px solid var(--line-l)}
+.index-row{display:grid;grid-template-columns:3rem minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:baseline;padding-block:clamp(22px,2.8vw,36px);border-bottom:1px solid var(--line-l);transition:padding .5s var(--ease),color .3s}
+.index-row:hover{padding-left:12px}
+.index-row .n{font-size:.75rem;color:var(--grey);font-variant-numeric:tabular-nums}
+.index-row h3{margin:0;font-family:var(--f-display);font-weight:700;font-variation-settings:"wdth" 118;text-transform:uppercase;font-size:clamp(1.25rem,2.6vw,2.4rem);letter-spacing:-.01em;line-height:1}
+.index-row p{margin:0;font-family:var(--f-serif);font-style:italic;font-size:clamp(1.1rem,1.6vw,1.5rem);color:var(--grey-d);line-height:1.2}
+.dark .index,.dark .index-row{border-color:var(--line-d)}
+.dark .index-row p{color:var(--grey)}
+@media (max-width:700px){.index-row{grid-template-columns:2.2rem 1fr}.index-row p{grid-column:2}}
+
+.closing{padding-block:clamp(100px,14vw,200px);text-align:left}
+.closing .voice{max-width:16em}
+.btn{display:inline-flex;align-items:center;gap:14px;padding:16px 26px;border:1px solid currentColor;border-radius:999px;font-size:.92rem;letter-spacing:.02em;transition:background .35s,color .35s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.dark .btn:hover{background:var(--paper);color:var(--ink)}
+.btn.solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+.dark .btn.solid{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.dark .btn.solid:hover{background:transparent;color:var(--paper)}
+
+/* ---------- Inner page hero ---------- */
+.p-hero{padding-top:clamp(130px,17vw,220px);padding-bottom:clamp(50px,7vw,100px)}
+.p-hero .label{display:block;margin-bottom:clamp(20px,3vw,36px)}
+.p-hero .lead{margin-top:clamp(28px,4vw,52px)}
+
+/* Services */
+.offers{border-top:1px solid var(--line-l)}
+.offer{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-block:clamp(44px,6vw,84px);border-bottom:1px solid var(--line-l)}
+.offer-n{grid-column:1/2;font-size:.8rem;color:var(--grey);font-variant-numeric:tabular-nums;padding-top:.5em}
+.offer-head{grid-column:2/7;display:grid;gap:14px;align-content:start}
+.offer-head h3{margin:0}
+.offer-price{font-size:.95rem}
+.offer-price b{font-family:var(--f-display);font-variation-settings:"wdth" 112;font-weight:700;font-size:1.5rem;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.offer-body{grid-column:8/-1;display:grid;gap:22px;align-content:start}
+.offer-body .voice{font-size:clamp(1.4rem,2.2vw,2rem)}
+.incl{list-style:none;margin:0;padding:0;columns:2;column-gap:24px}
+.incl li{break-inside:avoid;padding:9px 0;border-top:1px solid var(--line-l);font-size:.92rem;color:var(--grey-d)}
+@media (max-width:900px){.offer>*{grid-column:1/-1!important}.incl{columns:1}}
+.statement{padding-block:clamp(90px,13vw,190px)}
+
+/* Approach */
+.steps{counter-reset:s}
+.step{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-block:clamp(48px,7vw,104px);border-top:1px solid var(--line-d);align-items:baseline}
+.step-n{grid-column:1/3;font-family:var(--f-display);font-weight:300;font-variation-settings:"wdth" 125;font-size:clamp(2.6rem,6vw,6rem);line-height:.9;color:var(--grey-d);font-variant-numeric:tabular-nums}
+.step h3{grid-column:3/8;margin:0}
+.step p{grid-column:8/-1;margin:0;font-family:var(--f-serif);font-size:clamp(1.3rem,2vw,1.9rem);line-height:1.15;color:var(--paper)}
+.step:hover .step-n{color:var(--accent)}
+@media (max-width:800px){.step>*{grid-column:1/-1!important}}
+
+/* About */
+.about-body{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-bottom:clamp(90px,12vw,170px)}
+.about-body .col{grid-column:5/12;display:grid;gap:1.1em;font-size:clamp(1.05rem,1.4vw,1.3rem);line-height:1.6}
+.about-body .label{grid-column:1/4}
+@media (max-width:800px){.about-body>*{grid-column:1/-1!important}}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-bottom:clamp(90px,12vw,170px)}
+.contact-aside{grid-column:1/5;display:grid;gap:28px;align-content:start}
+.contact-form{grid-column:6/-1;display:grid;grid-template-columns:1fr 1fr;gap:6px 28px}
+.field{display:grid;gap:4px;padding-block:14px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.field input,.field textarea,.field select{font:inherit;font-size:1.1rem;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line-l);padding:10px 0;border-radius:0;transition:border-color .3s;width:100%;min-width:0}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 7px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{outline:0;border-bottom-color:var(--ink)}
+.form-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:24px}
+.form-ok{grid-column:1/-1;padding:28px 0;border-top:1px solid var(--ink)}
+.form-err{color:#9A2B1F;font-size:.85rem}
+@media (max-width:800px){.contact-aside,.contact-form{grid-column:1/-1}.contact-form{grid-template-columns:1fr}}
+
+/* Case study */
+.cs-hero{padding-top:clamp(120px,15vw,200px)}
+.cs-top{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;padding-bottom:clamp(30px,4vw,56px)}
+.cs-top .who{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap;align-items:baseline}
+.cs-top h1{grid-column:1/11;margin-top:18px}
+.cs-top .type{grid-column:11/-1;justify-self:end;text-align:right}
+@media (max-width:800px){.cs-top>*{grid-column:1/-1!important;justify-self:start!important;text-align:left!important}}
+.cs-block{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-block:clamp(56px,8vw,120px);border-top:1px solid var(--line-l)}
+.cs-block .label{grid-column:1/4;padding-top:.4em}
+.cs-block .body{grid-column:5/12;display:grid;gap:1em}
+.cs-block .voice{font-size:clamp(1.6rem,3vw,2.8rem)}
+@media (max-width:800px){.cs-block>*{grid-column:1/-1!important}}
+.cs-pair{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-bottom:clamp(56px,8vw,120px)}
+.cs-pair .a{grid-column:1/8}.cs-pair .b{grid-column:9/-1;align-self:end}
+.cs-decl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-bottom:clamp(56px,8vw,120px)}
+.cs-decl figure{margin:0;display:grid;gap:12px}
+.cs-decl figcaption{font-size:.8rem;color:var(--grey)}
+.cs-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-bottom:clamp(56px,8vw,120px)}
+.cs-gallery .g1{grid-column:1/-1}.cs-gallery .g2{grid-column:1/6}.cs-gallery .g3{grid-column:6/-1}
+@media (max-width:800px){.cs-pair>*,.cs-gallery>*{grid-column:1/-1!important}.cs-decl{grid-template-columns:1fr 1fr}.cs-decl figure:last-child{grid-column:1/-1}}
+.next{display:block;padding-block:clamp(70px,10vw,150px)}
+.next .label{display:block;margin-bottom:18px;color:var(--grey)}
+.next:hover .display{letter-spacing:0}
+.next .display{transition:letter-spacing .8s var(--ease)}
+
+/* ---------- Footer ---------- */
+.ftr{background:var(--ink);color:var(--paper);padding-top:clamp(70px,9vw,130px);overflow:hidden}
+.ftr-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.ftr-grid .about{grid-column:1/6;display:grid;gap:18px;align-content:start}
+.ftr-grid nav{grid-column:7/10;display:grid;gap:8px;align-content:start}
+.ftr-grid .soc{grid-column:10/-1;display:grid;gap:8px;align-content:start}
+.ftr a:hover{color:var(--grey)}
+.ftr .label{color:var(--grey);margin-bottom:10px;display:block}
+@media (max-width:800px){.ftr-grid .about{grid-column:1/-1}.ftr-grid nav{grid-column:1/7}.ftr-grid .soc{grid-column:7/-1}}
+/* Wordmark géant avec reflet inversé, en écho au logo */
+.mirror{margin-top:clamp(70px,10vw,140px);position:relative;user-select:none}
+.mirror .top,.mirror .bot{font-family:var(--f-display);font-weight:900;font-variation-settings:"wdth" 125;font-size:clamp(3.4rem,17.4vw,20rem);line-height:.78;letter-spacing:-.01em;white-space:nowrap;text-align:center}
+.mirror .top{background:var(--paper);color:var(--ink);padding-top:.12em;margin-inline:calc(var(--gutter)*-1);padding-inline:var(--gutter)}
+.mirror .bot{transform:scale(-1,-1);color:var(--paper);opacity:.14;padding-top:.04em;height:.5em;overflow:hidden}
+.ftr-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-block:22px calc(env(safe-area-inset-bottom,0px) + 22px);border-top:1px solid var(--line-d);font-size:.78rem;color:var(--grey)}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv.pre{transform:none;opacity:1}}
+</style>
+</head>
+<body>
+
+
+<!-- =====================================================================
+     ELLIZÉE — site officiel
+     Tous les médias se règlent dans l'objet MEDIA (script, en bas).
+     Chaque emplacement porte son identifiant : [VIDEO_HERO], [PROJECT_MEDIA_01]…
+     Laisser src vide = placeholder élégant "VIDEO — À AJOUTER".
+     ===================================================================== -->
+
+<header class="hdr" role="banner">
+  <div class="hdr-in">
+    <a href="#accueil" class="brand" aria-label="ELLIZÉE — accueil">
+      <!-- [LOGO] --><span class="wordmark">ELLIZÉE</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#creations" data-r="creations">Créations</a>
+      <a href="#services" data-r="services">Services</a>
+      <a href="#approche" data-r="approche">Approche</a>
+      <a href="#a-propos" data-r="a-propos">À propos</a>
+      <a href="#contact" data-r="contact">Contact</a>
+      <a href="#contact" class="cta">Parler de votre projet →</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mmenu"><span></span></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mmenu-top">
+    <span class="wordmark">ELLIZÉE</span>
+    <button class="close" id="mclose">Fermer</button>
+  </div>
+  <nav aria-label="Navigation mobile">
+    <a href="#creations"><small>01</small>Créations</a>
+    <a href="#services"><small>02</small>Services</a>
+    <a href="#approche"><small>03</small>Approche</a>
+    <a href="#a-propos"><small>04</small>À propos</a>
+    <a href="#contact"><small>05</small>Contact</a>
+  </nav>
+  <div class="m-cta">
+    <span class="label muted">Paris · Île-de-France</span>
+    <a href="#contact" class="btn">Parler de votre projet →</a>
+  </div>
+</div>
+
+<div class="veil" id="veil" aria-hidden="true"></div>
+<main id="app" tabindex="-1"></main>
+
+<footer class="ftr" role="contentinfo">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div class="about">
+        <span class="wordmark" style="font-size:1.4rem">ELLIZÉE</span>
+        <p class="muted" style="margin:0">Agence de publicité &amp; communication créative.</p>
+        <div><a href="#contact" class="btn">Parler de votre projet →</a></div>
+      </div>
+      <nav aria-label="Navigation du pied de page">
+        <span class="label">Navigation</span>
+        <a href="#creations">Créations</a>
+        <a href="#services">Services</a>
+        <a href="#approche">Approche</a>
+        <a href="#a-propos">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="soc">
+        <span class="label">Suivre</span>
+        <!-- [SOCIAL] Remplacer par vos URL -->
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="mirror" aria-hidden="true">
+      <div class="top">ELLIZÉE</div>
+      <div class="bot">ELLIZÉE</div>
+    </div>
+    <div class="ftr-bottom">
+      <span>© ELLIZÉE 2026</span>
+      <span>Tout commence par une idée.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   1. MÉDIAS — le seul endroit à modifier pour vos vidéos et images
+   ---------------------------------------------------------------------
+   type     : "video" | "image"
+   src      : URL ou chemin du fichier (ex. "videos/hero.mp4"). Vide = placeholder.
+   poster   : image affichée avant lecture (optionnel)
+   autoplay, loop, muted, controls : true / false
+   label    : texte du placeholder (supprimez-le pour un placeholder muet)
+   ===================================================================== */
+const V = (src, poster, o = {}) => ({ type:"video", src, poster, autoplay:true, loop:true, muted:true, controls:false, label:"VIDEO — À AJOUTER", ...o });
+const FILM = (src, poster) => ({ type:"video", src, poster, autoplay:false, loop:false, muted:false, controls:true, label:"FILM — À AJOUTER" });
+const IMG = src => ({ type:"image", src, label:"IMAGE — À AJOUTER" });
+
+const MEDIA = {
+  /* Accueil : bande démo muette, montée à partir des trois films */
+  VIDEO_HERO:        V("media/reel.mp4", "media/reel-poster.jpg"),
+
+  /* Couvertures de la galerie Créations */
+  PROJECT_MEDIA_01:  V("media/diot-france-loop.mp4", "media/diot-france-poster.jpg"),
+  PROJECT_MEDIA_02:  V("media/pleyce-loop.mp4", "media/pleyce-poster.jpg"),
+  PROJECT_MEDIA_03:  V("media/diot-rien-loop.mp4", "media/diot-rien-poster.jpg"),
+  PROJECT_MEDIA_04:  V("", ""),   /* LCL — à ajouter */
+  PROJECT_MEDIA_05:  V("", ""),   /* CETELEM — à ajouter */
+
+  /* Diot-Siaci — Pour que chaque matin, la France rouvre. */
+  "diot-france/CASE_STUDY_HERO_VIDEO": V("media/diot-france-loop.mp4", "media/diot-france-poster.jpg"),
+  "diot-france/CASE_STUDY_VIDEO_01":   FILM("media/diot-france-film.mp4", "media/diot-france-05.jpg"),
+  "diot-france/CASE_STUDY_IMAGE_01":   IMG("media/diot-france-01.jpg"),
+  "diot-france/CASE_STUDY_IMAGE_02":   IMG("media/diot-france-03.jpg"),
+  "diot-france/CASE_STUDY_GALLERY_01": IMG("media/diot-france-05.jpg"),
+  "diot-france/CASE_STUDY_GALLERY_02": IMG("media/diot-france-02.jpg"),
+  "diot-france/CASE_STUDY_GALLERY_03": IMG("media/diot-france-04.jpg"),
+
+  /* Pleyce — Vous simplifier le quotidien, où que vous soyez. */
+  "pleyce/CASE_STUDY_HERO_VIDEO": V("media/pleyce-loop.mp4", "media/pleyce-poster.jpg"),
+  "pleyce/CASE_STUDY_VIDEO_01":   FILM("media/pleyce-film.mp4", "media/pleyce-03.jpg"),
+  "pleyce/CASE_STUDY_IMAGE_01":   IMG("media/pleyce-01.jpg"),
+  "pleyce/CASE_STUDY_IMAGE_02":   IMG("media/pleyce-02.jpg"),
+  "pleyce/CASE_STUDY_GALLERY_01": IMG("media/pleyce-05.jpg"),
+  "pleyce/CASE_STUDY_GALLERY_02": IMG("media/pleyce-03.jpg"),
+  "pleyce/CASE_STUDY_GALLERY_03": IMG("media/pleyce-04.jpg"),
+
+  /* Diot-Siaci — Pour que rien ne s'arrête. */
+  "diot-rien/CASE_STUDY_HERO_VIDEO": V("media/diot-rien-loop.mp4", "media/diot-rien-poster.jpg"),
+  "diot-rien/CASE_STUDY_VIDEO_01":   FILM("media/diot-rien-film.mp4", "media/diot-rien-05.jpg"),
+  "diot-rien/CASE_STUDY_IMAGE_01":   IMG("media/diot-rien-01.jpg"),
+  "diot-rien/CASE_STUDY_IMAGE_02":   IMG("media/diot-rien-04.jpg"),
+  "diot-rien/CASE_STUDY_GALLERY_01": IMG("media/diot-rien-05.jpg"),
+  "diot-rien/CASE_STUDY_GALLERY_02": IMG("media/diot-rien-02.jpg"),
+  "diot-rien/CASE_STUDY_GALLERY_03": IMG("media/diot-rien-03.jpg"),
+
+  /* LCL et CETELEM : emplacements prêts, à remplir */
+  "lcl/CASE_STUDY_HERO_VIDEO":     V("", ""),
+  "lcl/CASE_STUDY_VIDEO_01":       FILM("", ""),
+  "lcl/CASE_STUDY_VIDEO_02":       V("", ""),
+  "cetelem/CASE_STUDY_HERO_VIDEO": V("", ""),
+  "cetelem/CASE_STUDY_VIDEO_01":   FILM("", ""),
+  "cetelem/CASE_STUDY_VIDEO_02":   V("", "")
+};
+
+/* Visuels — section « Images » de l'accueil et de la page Créations */
+const VISUALS = [
+  { src:"media/img-09.jpg", r:"r-23", alt:"Personnage géant en feutrine vert penché sur un immeuble haussmannien" },
+  { src:"media/img-07.jpg", r:"r-32", alt:"Créature rose à fourrure dans un couloir de bureau" },
+  { src:"media/img-03.jpg", r:"r-23", alt:"Personnage en pâte à modeler au petit-déjeuner, téléphone en main" },
+  { src:"media/img-05.jpg", r:"r-169", alt:"Jeune femme filmée au grand angle, la main tendue vers l'objectif" },
+  { src:"media/img-04.jpg", r:"r-169", alt:"Personnage en laine qui rit devant son téléphone" },
+  { src:"media/img-06.jpg", r:"r-32", alt:"Trois amis regardent un écran de téléphone" },
+  { src:"media/img-02.jpg", r:"r-169", alt:"Femme pensive devant une paroi de notes adhésives" },
+  { src:"media/img-08.jpg", r:"r-169", alt:"Femme qui écrit dans un carnet à son bureau" },
+  { src:"media/img-01.jpg", r:"r-11", alt:"Technicien sur des panneaux solaires" },
+  { src:"media/img-10.jpg", r:"r-32", alt:"Porte-conteneurs en pleine mer" }
+];
+
+/* Lien de prise de rendez-vous (Calendly, Cal.com…) — [BOOKING_URL] */
+const BOOKING_URL = "https://calendly.com/";
+
+/* =====================================================================
+   2. PROJETS — titres, clients, catégories, textes des pages projet
+   ===================================================================== */
+const PROJECTS = [
+  {
+    id:"diot-france", client:"DIOT-SIACI", title:"Pour que chaque matin, la France rouvre.", cat:"Film publicitaire", dur:"52 s",
+    media:"PROJECT_MEDIA_01", ratio:"r-cine m-r-45",
+    desc:"Une boulangerie saccagée, un artisan, et le matin où le rideau se relève.",
+    context:"Diot-Siaci accompagne les entreprises et les commerçants quand l'imprévu frappe. Le film devait rendre concret le rôle d'un courtier sans jamais parler de contrats ni de garanties.",
+    insight:"Pour un commerçant, un sinistre ne se mesure pas en euros. Il se mesure en jours de fermeture, en clients qui prennent d'autres habitudes, en une vie de travail mise entre parenthèses.",
+    idea:"Raconter la réouverture plutôt que le sinistre. Toute la promesse tient dans un geste ordinaire : lever le rideau le lendemain matin.",
+    concept:"Un récit en trois temps autour de Maison Lefèvre, une boulangerie de quartier. Le choc devant la vitrine brisée. L'appel, puis l'accompagnement sur place. Et le premier client qui franchit de nouveau la porte.",
+    da:"Paris en lumière d'hiver, une façade bleu nuit, une palette froide qui se réchauffe à mesure que la boutique reprend vie. Caméra à hauteur d'homme, au plus près du visage de l'artisan.",
+    film:"Film de 52 secondes. Signature : « Pour que chaque matin, la France rouvre. »"
+  },
+  {
+    id:"pleyce", client:"PLEYCE", title:"Vous simplifier le quotidien, où que vous soyez.", cat:"Film produits & services", dur:"67 s",
+    media:"PROJECT_MEDIA_02", ratio:"r-169 m-r-45",
+    desc:"Les trajets du matin, puis le moment qui rassemble une fois arrivé.",
+    context:"Pleyce équipe les entreprises en solutions café et en services pour leurs espaces de travail. Le film devait sortir du film produit classique et parler de ce que vivent les équipes.",
+    insight:"Les journées commencent rarement dans le calme : un métro bondé, un embouteillage, un enfant à déposer en courant. Le premier vrai répit arrive souvent au bureau, autour d'un café.",
+    idea:"Partir de la friction du matin pour arriver au moment partagé. La machine n'apparaît qu'à la fin, au point où les trajets de chacun se rejoignent.",
+    concept:"Plusieurs personnages traversent Paris en métro, en voiture, à vélo ou à pied. Leurs trajets convergent vers le même immeuble, le même ascenseur, puis la même pause café.",
+    da:"Paris au petit matin et des tons chauds. Beaucoup de mouvement dans la première partie, puis des plans posés et une lumière douce autour du produit. Un packshot épuré sur fond clair pour la signature.",
+    film:"Film de 67 secondes. Signature : « Vous simplifier le quotidien, où que vous soyez. »"
+  },
+  {
+    id:"diot-rien", client:"DIOT-SIACI", title:"Pour que rien ne s'arrête.", cat:"Film de marque / institutionnel", dur:"34 s",
+    media:"PROJECT_MEDIA_03", ratio:"r-45 m-r-45",
+    desc:"Les lieux qui font tourner le pays, de la tempête jusqu'au lever du jour.",
+    context:"Diot-Siaci accompagne de grands groupes de l'énergie, de l'industrie et de la logistique. Le film devait affirmer sa place auprès de ces entreprises, au-delà du métier d'assureur.",
+    insight:"On ne remarque une infrastructure que le jour où elle s'arrête. Tout le travail consiste à faire en sorte que ce jour n'arrive pas.",
+    idea:"Montrer la continuité. Une succession de lieux qui ne dorment jamais, reliés par une même promesse.",
+    concept:"Un voyage à travers l'énergie, la recherche, les données, le bâtiment, le transport routier et le maritime. Le film avance sans interruption, comme l'économie qu'il raconte.",
+    da:"Grands espaces, plans aériens, un ciel d'orage qui s'éclaircit peu à peu jusqu'à l'aube. Une image institutionnelle, ample et précise, sans effet superflu.",
+    film:"Film de 34 secondes. Signature : « Pour que rien ne s'arrête. »"
+  },
+  {
+    id:"lcl", client:"LCL", title:"Il n'y a pas de calendrier.", cat:"Film publicitaire", dur:"45 s",
+    media:"PROJECT_MEDIA_04", ratio:"r-45 m-r-45",
+    desc:"Un film sur les projets de vie qui n'attendent pas la bonne date.",
+    context:"Pour une banque, parler d'avenir revient souvent à parler d'échéances : plans d'épargne, horizons, simulations. Le film propose une prise de parole plus humaine sur l'accompagnement des projets de vie.",
+    insight:"Les décisions qui comptent n'arrivent jamais au moment prévu. On se marie trop tôt, on change de métier trop tard, on achète quand l'occasion se présente.",
+    idea:"Il n'y a pas de calendrier. Une banque qui ne demande pas d'attendre le bon moment, mais qui est prête quand il arrive.",
+    concept:"Une succession de moments de vie filmés hors de toute temporalité : pas de dates, pas de saisons repérables, aucune horloge à l'image. Le temps n'existe que par les gestes des personnages.",
+    da:"Lumière naturelle, focales longues, cadres serrés sur les mains et les regards. Une palette désaturée qui laisse la place aux visages.",
+    film:"Film principal de 45 secondes, en 16:9 pour la télévision et la vidéo en ligne.",
+    decl:["Version 15 s — Le premier appartement","Version 15 s — Le nouveau départ","Version 9:16 — Réseaux sociaux"]
+  },
+  {
+    id:"cetelem", client:"CETELEM", title:"Pas besoin d'attendre.", cat:"Campagne", dur:"60 s",
+    media:"PROJECT_MEDIA_05", ratio:"r-169 m-r-45",
+    desc:"Une campagne autour de l'impatience, celle qui fait avancer.",
+    context:"Le crédit à la consommation souffre d'une image de facilité. La campagne parle d'accès et de simplicité sans encourager l'impulsivité.",
+    insight:"L'attente n'est pas toujours une vertu. Elle est parfois simplement un obstacle entre une personne et ce qui lui permettrait de vivre mieux, tout de suite.",
+    idea:"Pas besoin d'attendre. Une idée simple, déclinable sur tous les supports, qui transforme la rapidité en respect du temps des gens.",
+    concept:"Des scènes du quotidien où l'attente est montrée comme une perte : la file, le sablier, la pièce vide. Puis la coupe franche vers la vie qui reprend.",
+    da:"Cadres frontaux et symétriques, rythme de montage sec, typographie massive en surimpression. Un territoire visuel facilement reconnaissable en affichage.",
+    film:"Film manifeste de 60 secondes, trois films courts de 10 secondes et cinq visuels d'affichage.",
+    decl:["Affichage 4×3 — La salle d'attente","Social 9:16 — Le sablier","Social 1:1 — La pièce vide"]
+  }
+];
+
+const CREATE = [
+  ["Films publicitaires","Créer une prise de parole qui marque."],
+  ["Films de marque","Exprimer une identité, une vision, un univers."],
+  ["Films institutionnels & corporate","Faire comprendre une entreprise et ce qu'elle représente."],
+  ["Films de recrutement","Donner envie de rejoindre une aventure."],
+  ["Films produits & services","Transformer une offre en histoire."],
+  ["Campagnes","Développer une idée sur plusieurs supports."]
+];
+
+const OFFERS = [
+  { n:"01", name:"Film court", price:"890 €", tag:"Une idée. Un film court.", desc:"Pour une prise de parole courte, avec une idée claire et une réalisation premium.",
+    head:"Comprend", items:["réflexion créative","concept","direction artistique","écriture / structure","storyboard","production","montage","sound design / musique","format principal","adaptation secondaire"] },
+  { n:"02", name:"Film publicitaire", price:"1 990 €", tag:"Une idée conçue pour être retenue.", desc:"Une véritable création publicitaire pensée autour d'une idée forte.",
+    head:"Comprend", items:["réflexion stratégique et créative","insight / vérité humaine","concept publicitaire","écriture","storyboard","direction artistique","production","montage","sound design / musique","film principal jusqu'à environ 60 secondes","formats 16:9 et 9:16","3 déclinaisons courtes"] },
+  { n:"03", name:"Campagne", price:"3 490 €", tag:"Une idée. Un territoire. Plusieurs expressions.", desc:"Une idée centrale développée en plusieurs prises de parole cohérentes.",
+    head:"Comprend", items:["réflexion stratégique","insight","concept central","direction artistique","territoire visuel","1 film principal jusqu'à 60 secondes","3 films courts","5 visuels publicitaires","adaptations 16:9 / 9:16 / 1:1","sound design / musique"] },
+  { n:"04", name:"Sur mesure", price:"5 000 €", tag:"Nous construisons le dispositif adapté à votre ambition.", desc:"Pour les projets dont l'ampleur demande une réponse spécifique.",
+    head:"Pour", items:["campagnes nationales","lancement de marque","repositionnement","campagnes importantes","plusieurs films","dispositifs multi-supports","projets internationaux","projets nécessitant une production spécifique"], cta:true }
+];
+
+const STEPS = [
+  ["Vérité","Qu'est-ce qui mérite réellement d'être dit ?"],
+  ["Idée","Quelle idée peut transformer cette vérité en prise de parole ?"],
+  ["Émotion","Que doit ressentir le public ?"],
+  ["Forme","Quelle structure, quel langage et quel univers servent le mieux cette idée ?"],
+  ["Production","Nous donnons vie à l'idée."]
+];
+
+/* =====================================================================
+   3. COMPOSANTS MÉDIA
+   VideoPlaceholder · HeroVideo · ProjectMedia · CaseStudyMedia
+   ===================================================================== */
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function VideoPlaceholder(slot, cfg = {}, small = false){
+  const isImg = cfg.type === "image";
+  return `<div class="ph${small ? " ph-sm" : ""}" data-slot="${esc(slot)}">
+    <div class="ph-frame"><i></i><i></i><i></i><i></i></div>
+    <div class="ph-center">
+      <span class="ph-play${isImg ? " img" : ""}" aria-hidden="true"></span>
+      ${cfg.label ? `<span class="ph-tag">${esc(cfg.label)}</span>` : ""}
+      <span class="ph-slot">[${esc(slot.split("/").pop())}]</span>
+    </div>
+    <div class="ph-meta"><span class="rec">ELLIZÉE</span><span>00:00:00:00</span></div>
+  </div>`;
+}
+
+function renderMedia(slot, cls = "r-169", opts = {}){
+  const cfg = MEDIA[slot] || {};
+  let inner;
+  if (!cfg.src){
+    inner = VideoPlaceholder(slot, cfg, opts.small);
+  } else if (cfg.type === "image"){
+    inner = `<img src="${esc(cfg.src)}" alt="${esc(opts.alt || "")}" loading="${opts.eager ? "eager" : "lazy"}" decoding="async">`;
+  } else {
+    const a = [
+      cfg.muted !== false ? "muted" : "",
+      cfg.loop ? "loop" : "",
+      cfg.controls ? "controls" : "",
+      "playsinline",
+      cfg.poster ? `poster="${esc(cfg.poster)}"` : "",
+      `preload="${opts.eager ? "auto" : "none"}"`,
+      cfg.autoplay ? `data-autoplay` : ""
+    ].join(" ");
+    inner = `<video ${a} data-src="${esc(cfg.src)}" aria-label="${esc(opts.alt || "")}"></video>`;
+  }
+  return `<div class="media ${cls}" data-media="${esc(slot)}">${inner}</div>`;
+}
+
+const HeroVideo      = () => renderMedia("VIDEO_HERO", "r-cine m-r-45", { eager:true, alt:"Film ELLIZÉE" });
+const ProjectMedia   = p  => renderMedia(p.media, p.ratio, { alt:`${p.client} — ${p.title}` });
+const CaseStudyMedia = (id, slot, cls, opts={}) => renderMedia(`${id}/${slot}`, cls, opts);
+
+/* Chargement paresseux + autoplay des vidéos visibles */
+const vidIO = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting){
+      if (!v.src && v.dataset.src){ v.src = v.dataset.src; }
+      if (v.hasAttribute("data-autoplay")) v.play().catch(()=>{});
+    } else if (v.hasAttribute("data-autoplay")) { v.pause(); }
+  });
+},{ rootMargin:"200px 0px" }) : null;
+
+function wireVideos(root){
+  root.querySelectorAll("video[data-src]").forEach(v => {
+    if (vidIO) vidIO.observe(v); else { v.src = v.dataset.src; if (v.hasAttribute("data-autoplay")) v.play().catch(()=>{}); }
+  });
+}
+
+/* =====================================================================
+   4. PAGES
+   ===================================================================== */
+const coverHTML = p => `
+  <a class="cover rv" href="${p.link || "#projet-" + p.id}">
+    ${ProjectMedia(p)}
+    <div class="cover-info">
+      <span class="cover-client">${esc(p.client)}</span>
+      <span class="cover-cat label">${esc(p.cat)}</span>
+      <span class="cover-arrow" aria-hidden="true">→</span>
+      <h3 class="cover-title serif" style="margin:0">${esc(p.title)}</h3>
+      <p class="cover-desc" style="margin:0">${esc(p.desc)}</p>
+    </div>
+  </a>`;
+
+const visualsSection = () => `
+  <section class="wrap" aria-labelledby="vis">
+    <div class="sec-head">
+      <span class="label muted">Images</span>
+      <h2 id="vis" class="display d-xl rv">Chaque idée a son image.</h2>
+    </div>
+    <div class="visuals">
+      ${VISUALS.map(v=>`<figure class="rv"><img src="${esc(v.src)}" alt="${esc(v.alt)}" loading="lazy" decoding="async"></figure>`).join("")}
+    </div>
+  </section>`;
+
+const createList = () => `
+  <div class="index">
+    ${CREATE.map((c,i)=>`<div class="index-row rv"><span class="n">0${i+1}</span><h3>${esc(c[0])}</h3><p>${esc(c[1])}</p></div>`).join("")}
+  </div>`;
+
+const closingCTA = (dark=false) => `
+  <section class="closing wrap${dark?" dark":""}">
+    <span class="label muted" style="display:block;margin-bottom:28px">Contact</span>
+    <p class="voice rv">Vous avez quelque chose à dire ? <em>Parlons-en.</em></p>
+    <div style="margin-top:44px"><a href="#contact" class="btn solid">Parler de votre projet →</a></div>
+  </section>`;
+
+const PAGES = {
+  accueil: () => `
+    <section class="hero wrap">
+      <div class="hero-grid enter">
+        <h1 class="display d-xxl">Tout commence<br>par une idée.</h1>
+        <div class="hero-sub"><p style="margin:0">ELLIZÉE — Agence de publicité &amp; communication créative.</p></div>
+        <div class="hero-meta label muted">Films · Campagnes · Marques</div>
+      </div>
+      <div class="hero-video" id="parallax">${HeroVideo()}</div>
+    </section>
+
+    <section class="conviction wrap" aria-labelledby="conv">
+      <div class="conv-grid">
+        <span class="label muted">Notre conviction</span>
+        <h2 id="conv" class="voice rv">Une marque n'a pas besoin de plus de contenu.<br><em>Elle a besoin de quelque chose à dire.</em></h2>
+        <div class="txt rv">
+          <p style="margin:0">Nous partons de ce qui compte vraiment : une vérité, une tension, une ambition.</p>
+          <p style="margin:0">Puis nous trouvons l'idée capable de la transformer en image, en film ou en campagne.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" aria-labelledby="crea">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label muted">Créations</span>
+          <h2 id="crea" class="display d-xl rv">Des idées qui méritent d'être vues.</h2>
+        </div>
+        <div class="covers">${PROJECTS.map(coverHTML).join("")}</div>
+      </div>
+    </section>
+
+    ${visualsSection()}
+
+    <section class="dark wrap" aria-labelledby="forms" style="padding-bottom:clamp(60px,8vw,120px)">
+      <div class="sec-head">
+        <span class="label muted">Ce que nous créons</span>
+        <h2 id="forms" class="display d-xl rv">Des idées.<br><span class="serif" style="font-style:italic;text-transform:none;letter-spacing:-.01em">Sous toutes leurs formes.</span></h2>
+      </div>
+      ${createList()}
+    </section>
+
+    ${closingCTA()}
+  `,
+
+  creations: () => `
+    <div class="dark">
+      <section class="p-hero wrap enter">
+        <span class="label muted">Créations</span>
+        <h1 class="display d-xl">Des idées qui méritent d'être vues.</h1>
+      </section>
+      <div class="wrap"><div class="covers">${PROJECTS.map(coverHTML).join("")}</div></div>
+    </div>
+    ${visualsSection()}
+    ${closingCTA(true)}
+  `,
+
+  services: () => `
+    <section class="p-hero wrap enter">
+      <span class="label muted">Services</span>
+      <h1 class="display d-xl">Ce que nous pouvons créer.</h1>
+      <p class="lead muted">Nos offres correspondent à l'ampleur de la production. Le type de film, lui, dépend de ce que votre marque a à dire.</p>
+    </section>
+
+    <section class="wrap" aria-label="Offres">
+      <div class="offers">
+        ${OFFERS.map(o=>`
+          <article class="offer rv">
+            <span class="offer-n">${o.n}</span>
+            <div class="offer-head">
+              <h2 class="display d-l">${esc(o.name)}</h2>
+              <span class="offer-price muted">À partir de <b style="color:var(--ink)">${o.price}</b></span>
+            </div>
+            <div class="offer-body">
+              <p class="voice"><em>${esc(o.tag)}</em></p>
+              <p style="margin:0;color:var(--grey-d)">${esc(o.desc)}</p>
+              <div>
+                <span class="label muted" style="display:block;margin-bottom:10px">${o.head}</span>
+                <ul class="incl">${o.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>
+              </div>
+              ${o.cta?`<div><a href="#contact" class="btn solid">Parler de votre projet →</a></div>`:""}
+            </div>
+          </article>`).join("")}
+      </div>
+    </section>
+
+    <section class="statement dark wrap">
+      <p class="display d-xl rv">Le format dépend du projet.<br><span class="serif" style="font-style:italic;text-transform:none">L'exigence reste la même.</span></p>
+    </section>
+
+    <section class="wrap" style="padding-bottom:clamp(60px,8vw,120px)">
+      <div class="sec-head">
+        <span class="label muted">Types de projets</span>
+        <h2 class="display d-l rv">Des idées.<br><span class="serif" style="font-style:italic;text-transform:none">Sous toutes leurs formes.</span></h2>
+      </div>
+      ${createList()}
+    </section>
+    ${closingCTA(true)}
+  `,
+
+  approche: () => `
+    <div class="dark">
+      <section class="p-hero wrap enter">
+        <span class="label muted">Approche</span>
+        <h1 class="display d-xxl">Avant l'image,<br>il y a l'idée.</h1>
+        <p class="voice" style="margin-top:clamp(36px,5vw,72px);max-width:18em;color:var(--grey)">Une publicité ne commence pas par un format. <em style="color:var(--paper)">Elle commence par une idée.</em></p>
+      </section>
+      <section class="wrap steps" aria-label="Notre méthode en cinq étapes" style="padding-bottom:clamp(40px,6vw,80px)">
+        ${STEPS.map((s,i)=>`
+          <div class="step rv">
+            <span class="step-n">0${i+1}</span>
+            <h3 class="display d-l">${esc(s[0])}</h3>
+            <p>${esc(s[1])}</p>
+          </div>`).join("")}
+      </section>
+    </div>
+    <section class="statement wrap">
+      <p class="voice rv" style="max-width:20em">Nous ne cherchons pas à faire ressembler chaque campagne à la précédente.<br><em>Nous cherchons la forme juste pour chaque idée.</em></p>
+    </section>
+    ${closingCTA(true)}
+  `,
+
+  "a-propos": () => `
+    <section class="p-hero wrap enter">
+      <span class="label muted">À propos</span>
+      <h1 class="display d-xl">Nous pensons que la publicité peut encore surprendre.</h1>
+    </section>
+    <section class="about-body wrap">
+      <span class="label muted">ELLIZÉE</span>
+      <div class="col rv">
+        <p style="margin:0">ELLIZÉE est une agence de publicité et de communication créative.</p>
+        <p style="margin:0">Nous travaillons avec les marques pour trouver ce qu'elles ont réellement à dire, puis nous construisons la forme capable de le faire exister.</p>
+        <p style="margin:0" class="serif"><span style="font-size:1.4em;line-height:1.2;display:block">Films, campagnes, communication de marque : notre terrain de jeu change. <em>Notre exigence reste la même.</em></span></p>
+      </div>
+    </section>
+    <section class="dark wrap" style="padding-bottom:clamp(60px,8vw,120px)">
+      <div class="sec-head">
+        <span class="label muted">Ce que nous créons</span>
+        <h2 class="display d-l rv">Des idées.<br><span class="serif" style="font-style:italic;text-transform:none">Sous toutes leurs formes.</span></h2>
+      </div>
+      ${createList()}
+    </section>
+    ${closingCTA()}
+  `,
+
+  contact: () => `
+    <section class="p-hero wrap enter">
+      <span class="label muted">Contact</span>
+      <h1 class="display d-xl">Vous avez quelque chose à dire ?</h1>
+    </section>
+    <section class="contact-grid wrap">
+      <aside class="contact-aside">
+        <p class="voice" style="font-size:clamp(1.5rem,2.4vw,2.2rem)">Une idée ?<br>Un problème à résoudre ?<br>Une marque à faire évoluer ?</p>
+        <p class="display d-m">Parlons-en.</p>
+        <div style="border-top:1px solid var(--line-l);padding-top:24px;display:grid;gap:16px">
+          <p style="margin:0;color:var(--grey-d)">Vous préférez nous présenter votre projet directement ?</p>
+          <div><a class="btn" href="${BOOKING_URL}" target="_blank" rel="noopener">Prendre rendez-vous →</a></div>
+        </div>
+      </aside>
+      <!-- [FORM_ENDPOINT] Brancher l'envoi (Formspree, Netlify Forms, API…) dans handleSubmit() -->
+      <form class="contact-form" id="cform" novalidate>
+        <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" autocomplete="name" required></div>
+        <div class="field"><label for="f-ent">Entreprise</label><input id="f-ent" name="entreprise" autocomplete="organization"></div>
+        <div class="field"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-tel">Téléphone (optionnel)</label><input id="f-tel" name="telephone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="f-proj">Votre projet</label><textarea id="f-proj" name="projet" required placeholder="Votre marque, votre enjeu, vos délais…"></textarea></div>
+        <div class="field full"><label for="f-bud">Budget indicatif</label>
+          <select id="f-bud" name="budget">
+            <option value="">Sélectionner</option>
+            <option>Moins de 2 000 €</option>
+            <option>2 000 – 3 500 €</option>
+            <option>3 500 – 5 000 €</option>
+            <option>5 000 – 10 000 €</option>
+            <option>Plus de 10 000 €</option>
+            <option>À définir ensemble</option>
+          </select>
+        </div>
+        <div class="form-foot">
+          <span class="form-err" id="ferr" role="alert"></span>
+          <button class="btn solid" type="submit">Envoyer →</button>
+        </div>
+      </form>
+    </section>
+  `
+};
+
+function caseStudy(id){
+  const i = PROJECTS.findIndex(p=>p.id===id);
+  const p = PROJECTS[i];
+  if (!p || !p.context) return PAGES.accueil();
+  const nxt = PROJECTS.filter(x=>x.context)[(PROJECTS.filter(x=>x.context).indexOf(p)+1) % PROJECTS.filter(x=>x.context).length];
+  const block = (label, html, voice=false) => `
+    <section class="cs-block wrap rv">
+      <span class="label muted">${label}</span>
+      <div class="body">${voice ? `<p class="voice" style="margin:0">${esc(html)}</p>` : `<p style="margin:0;font-size:1.1rem">${esc(html)}</p>`}</div>
+    </section>`;
+  return `
+    <article>
+      <header class="cs-hero wrap">
+        <div class="cs-top enter">
+          <div class="who"><span class="cover-client" style="font-size:1.1rem">${esc(p.client)}</span><span class="label muted">Création ELLIZÉE</span>${p.dur?`<span class="label muted">${esc(p.dur)}</span>`:""}</div>
+          <h1 class="display d-xl">${esc(p.title)}</h1>
+          <span class="type label muted">${esc(p.cat)}</span>
+        </div>
+        ${CaseStudyMedia(p.id,"CASE_STUDY_HERO_VIDEO","r-cine m-r-916",{eager:true,alt:`${p.client} — film principal`})}
+      </header>
+
+      ${block("Contexte", p.context)}
+      ${block("Vérité", p.insight, true)}
+      ${block("Idée", p.idea, true)}
+
+      <div class="cs-pair wrap">
+        <div class="a rv">${CaseStudyMedia(p.id,"CASE_STUDY_IMAGE_01","r-32",{alt:`${p.client} — visuel`})}</div>
+        <div class="b rv">${CaseStudyMedia(p.id,"CASE_STUDY_IMAGE_02","r-45",{alt:`${p.client} — visuel`})}</div>
+      </div>
+
+      ${block("Concept créatif", p.concept)}
+      ${block("Direction artistique", p.da)}
+
+      <section class="dark" style="padding-block:clamp(56px,8vw,120px)">
+        <div class="wrap">
+          <div class="cs-block" style="border-top:0;padding-top:0">
+            <span class="label muted">Le film</span>
+            <div class="body"><p style="margin:0;font-size:1.1rem">${esc(p.film)}</p></div>
+          </div>
+          ${CaseStudyMedia(p.id,"CASE_STUDY_VIDEO_01","r-169",{alt:`${p.client} — film`})}
+        </div>
+      </section>
+
+${p.decl ? `      <section class="wrap">
+        <div class="cs-block" style="border-top:0">
+          <span class="label muted">Déclinaisons</span>
+          <div class="body"><p style="margin:0;font-size:1.1rem">Une même idée, pensée pour chaque écran.</p></div>
+        </div>
+        <div class="cs-decl">
+          ${p.decl.map((d,k)=>`<figure class="rv">${k===0 ? CaseStudyMedia(p.id,"CASE_STUDY_VIDEO_02","r-916",{alt:d}) : renderMedia(`${p.id}/CASE_STUDY_DECL_0${k+1}`, k===2?"r-11":"r-916",{small:true,alt:d})}<figcaption>${esc(d)}</figcaption></figure>`).join("")}
+        </div>
+      </section>` : ""}
+
+      <section class="wrap">
+        <div class="cs-block">
+          <span class="label muted">Galerie</span>
+          <div class="body"></div>
+        </div>
+        <div class="cs-gallery">
+          <div class="g1 rv">${renderMedia(`${p.id}/CASE_STUDY_GALLERY_01`,"r-cine",{alt:"Galerie"})}</div>
+          <div class="g2 rv">${renderMedia(`${p.id}/CASE_STUDY_GALLERY_02`,"r-45",{alt:"Galerie"})}</div>
+          <div class="g3 rv">${renderMedia(`${p.id}/CASE_STUDY_GALLERY_03`,"r-32",{alt:"Galerie"})}</div>
+        </div>
+      </section>
+
+      <a class="next dark wrap" href="#projet-${nxt.id}">
+        <span class="label">Projet suivant — ${esc(nxt.client)}</span>
+        <span class="display d-xl" style="display:block">${esc(nxt.title)} →</span>
+      </a>
+    </article>`;
+}
+/* Emplacements supplémentaires (déclinaisons, galerie) : ajoutez-les dans MEDIA
+   avec la même clé, ex. "lcl/CASE_STUDY_GALLERY_01": { type:"image", src:"img/lcl-1.jpg" } */
+PROJECTS.forEach(({id})=>{
+  ["CASE_STUDY_IMAGE_01","CASE_STUDY_IMAGE_02","CASE_STUDY_DECL_02","CASE_STUDY_DECL_03","CASE_STUDY_GALLERY_01","CASE_STUDY_GALLERY_02","CASE_STUDY_GALLERY_03"].forEach(s=>{
+    MEDIA[`${id}/${s}`] ??= { type:"image", src:"", label:"IMAGE — À AJOUTER" };
+  });
+});
+
+/* =====================================================================
+   5. ROUTEUR, TRANSITIONS, INTERACTIONS
+   ===================================================================== */
+const app = document.getElementById("app");
+const veil = document.getElementById("veil");
+const TITLES = { accueil:"", creations:"Créations", services:"Services", approche:"Approche", "a-propos":"À propos", contact:"Contact" };
+const BASE_TITLE = "ELLIZÉE — Agence de publicité & communication créative";
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let first = true;
+
+function routeKey(){ return (location.hash || "#accueil").slice(1) || "accueil"; }
+
+function render(){
+  const key = routeKey();
+  let html, title;
+  if (key.startsWith("projet-")){
+    const p = PROJECTS.find(x=>x.id===key.slice(7));
+    html = caseStudy(key.slice(7)); title = p ? `${p.client} — ${p.title} | ELLIZÉE` : BASE_TITLE;
+  } else {
+    const k = PAGES[key] ? key : "accueil";
+    html = PAGES[k](); title = TITLES[k] ? `${TITLES[k]} — ELLIZÉE` : BASE_TITLE;
+  }
+  const swap = () => {
+    app.innerHTML = html;
+    document.title = title;
+    window.scrollTo(0,0);
+    document.querySelectorAll(".nav a[data-r]").forEach(a=>{
+      const on = a.dataset.r===key || (a.dataset.r==="creations" && key.startsWith("projet-"));
+      on ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current");
+    });
+    wireVideos(app); wireReveal(app); wireForm();
+  };
+  if (first || reduce){ swap(); first = false; return; }
+  veil.classList.remove("go"); void veil.offsetWidth; veil.classList.add("go");
+  setTimeout(swap, 420);
+}
+
+/* Apparition progressive : seuls les éléments sous la ligne de flottaison sont décalés */
+const revIO = "IntersectionObserver" in window ? new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.remove("pre"); revIO.unobserve(e.target); } });
+},{ rootMargin:"0px 0px -8% 0px" }) : null;
+function wireReveal(root){
+  if (!revIO || reduce) return;
+  const h = innerHeight;
+  root.querySelectorAll(".rv").forEach(el=>{
+    if (el.getBoundingClientRect().top > h){ el.classList.add("pre"); revIO.observe(el); }
+  });
+}
+
+/* Parallaxe très légère sur la vidéo d'accueil */
+addEventListener("scroll",()=>{
+  const el = document.getElementById("parallax");
+  if (!el || reduce) return;
+  const y = Math.min(scrollY, 900);
+  el.style.transform = `translate3d(0,${y*-0.06}px,0)`;
+},{ passive:true });
+
+/* Formulaire */
+function wireForm(){
+  const f = document.getElementById("cform");
+  if (!f) return;
+  f.addEventListener("submit", handleSubmit);
+}
+function handleSubmit(e){
+  e.preventDefault();
+  const f = e.currentTarget, err = document.getElementById("ferr");
+  const nom = f.nom.value.trim(), mail = f.email.value.trim(), proj = f.projet.value.trim();
+  if (!nom || !proj){ err.textContent = "Indiquez votre nom et quelques mots sur votre projet."; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){ err.textContent = "Vérifiez votre adresse email."; f.email.focus(); return; }
+  err.textContent = "";
+  /* [FORM_ENDPOINT] — exemple :
+     fetch("https://formspree.io/f/XXXX",{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}) */
+  f.innerHTML = `<div class="form-ok"><p class="voice" style="margin:0">Merci ${esc(nom.split(" ")[0])}.<br><em>Votre message est bien parti.</em></p><p class="muted" style="margin-top:18px">Nous revenons vers vous sous 48 heures ouvrées.</p></div>`;
+}
+
+/* Menu mobile */
+const mm = document.getElementById("mmenu"), burger = document.getElementById("burger");
+const setMenu = open => { mm.classList.toggle("open", open); burger.setAttribute("aria-expanded", open); document.body.style.overflow = open ? "hidden" : ""; };
+burger.addEventListener("click", ()=>setMenu(true));
+document.getElementById("mclose").addEventListener("click", ()=>setMenu(false));
+mm.querySelectorAll("a").forEach(a=>a.addEventListener("click", ()=>setMenu(false)));
+addEventListener("keydown", e=>{ if(e.key==="Escape") setMenu(false); });
+
+addEventListener("hashchange", render);
+render();
+</script>
+
+</body>
+</html>
