@@ -266,6 +266,8 @@ main{min-height:60vh}
 @media (max-width:800px){.cs-block>*{grid-column:1/-1!important}}
 .cs-pair{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-bottom:clamp(56px,8vw,120px)}
 .cs-pair .a{grid-column:1/8}.cs-pair .b{grid-column:9/-1;align-self:end}
+.cs-pair.vert .a{grid-column:2/7}.cs-pair.vert .b{grid-column:8/12;margin-top:clamp(0px,10vw,160px)}
+.cs-vert{max-width:min(100%,480px);margin-inline:auto}
 .cs-decl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-bottom:clamp(56px,8vw,120px)}
 .cs-decl figure{margin:0;display:grid;gap:12px}
 .cs-decl figcaption{font-size:.8rem;color:var(--grey)}
@@ -404,8 +406,8 @@ const MEDIA = {
   PROJECT_MEDIA_01:  V("media/diot-france-loop.mp4", "media/diot-france-poster.jpg"),
   PROJECT_MEDIA_02:  V("media/pleyce-loop.mp4", "media/pleyce-poster.jpg"),
   PROJECT_MEDIA_03:  V("media/diot-rien-loop.mp4", "media/diot-rien-poster.jpg"),
-  PROJECT_MEDIA_04:  V("", ""),   /* LCL — à ajouter */
-  PROJECT_MEDIA_05:  V("", ""),   /* CETELEM — à ajouter */
+  PROJECT_MEDIA_04:  V("media/lcl-loop.mp4", "media/lcl-poster.jpg"),
+  PROJECT_MEDIA_05:  IMG("media/img-09.jpg"),
 
   /* Diot-Siaci — Pour que chaque matin, la France rouvre. */
   "diot-france/CASE_STUDY_HERO_VIDEO": V("media/diot-france-loop.mp4", "media/diot-france-poster.jpg"),
@@ -434,18 +436,21 @@ const MEDIA = {
   "diot-rien/CASE_STUDY_GALLERY_02": IMG("media/diot-rien-02.jpg"),
   "diot-rien/CASE_STUDY_GALLERY_03": IMG("media/diot-rien-03.jpg"),
 
-  /* LCL et CETELEM : emplacements prêts, à remplir */
-  "lcl/CASE_STUDY_HERO_VIDEO":     V("", ""),
-  "lcl/CASE_STUDY_VIDEO_01":       FILM("", ""),
-  "lcl/CASE_STUDY_VIDEO_02":       V("", ""),
-  "cetelem/CASE_STUDY_HERO_VIDEO": V("", ""),
-  "cetelem/CASE_STUDY_VIDEO_01":   FILM("", ""),
-  "cetelem/CASE_STUDY_VIDEO_02":   V("", "")
+  /* LCL — Chaque clé ouvre une nouvelle histoire. (film vertical 9:16) */
+  "lcl/CASE_STUDY_HERO_VIDEO": V("media/lcl-loop.mp4", "media/lcl-poster.jpg"),
+  "lcl/CASE_STUDY_VIDEO_01":   FILM("media/lcl-film.mp4", "media/lcl-05.jpg"),
+  "lcl/CASE_STUDY_IMAGE_01":   IMG("media/lcl-01.jpg"),
+  "lcl/CASE_STUDY_IMAGE_02":   IMG("media/lcl-02.jpg"),
+  "lcl/CASE_STUDY_GALLERY_01": IMG("media/lcl-03.jpg"),
+  "lcl/CASE_STUDY_GALLERY_02": IMG("media/lcl-04.jpg"),
+  "lcl/CASE_STUDY_GALLERY_03": IMG("media/lcl-06.jpg"),
+
+  /* CETELEM — visuel d'affichage (photo seule) */
+  "cetelem/CASE_STUDY_HERO_VIDEO": IMG("media/img-09.jpg")
 };
 
 /* Visuels — section « Images » de l'accueil et de la page Créations */
 const VISUALS = [
-  { src:"media/img-09.jpg", r:"r-23", alt:"Personnage géant en feutrine vert penché sur un immeuble haussmannien" },
   { src:"media/img-07.jpg", r:"r-32", alt:"Créature rose à fourrure dans un couloir de bureau" },
   { src:"media/img-03.jpg", r:"r-23", alt:"Personnage en pâte à modeler au petit-déjeuner, téléphone en main" },
   { src:"media/img-05.jpg", r:"r-169", alt:"Jeune femme filmée au grand angle, la main tendue vers l'objectif" },
@@ -498,28 +503,26 @@ const PROJECTS = [
     film:"Film de 34 secondes. Signature : « Pour que rien ne s'arrête. »"
   },
   {
-    id:"lcl", client:"LCL", title:"Il n'y a pas de calendrier.", cat:"Film publicitaire", dur:"45 s",
+    id:"lcl", client:"LCL", title:"Chaque clé ouvre une nouvelle histoire.", cat:"Film publicitaire", dur:"37 s · 9:16", vertical:true,
     media:"PROJECT_MEDIA_04", ratio:"r-45 m-r-45",
-    desc:"Un film sur les projets de vie qui n'attendent pas la bonne date.",
-    context:"Pour une banque, parler d'avenir revient souvent à parler d'échéances : plans d'épargne, horizons, simulations. Le film propose une prise de parole plus humaine sur l'accompagnement des projets de vie.",
-    insight:"Les décisions qui comptent n'arrivent jamais au moment prévu. On se marie trop tôt, on change de métier trop tard, on achète quand l'occasion se présente.",
-    idea:"Il n'y a pas de calendrier. Une banque qui ne demande pas d'attendre le bon moment, mais qui est prête quand il arrive.",
-    concept:"Une succession de moments de vie filmés hors de toute temporalité : pas de dates, pas de saisons repérables, aucune horloge à l'image. Le temps n'existe que par les gestes des personnages.",
-    da:"Lumière naturelle, focales longues, cadres serrés sur les mains et les regards. Une palette désaturée qui laisse la place aux visages.",
-    film:"Film principal de 45 secondes, en 16:9 pour la télévision et la vidéo en ligne.",
-    decl:["Version 15 s — Le premier appartement","Version 15 s — Le nouveau départ","Version 9:16 — Réseaux sociaux"]
+    desc:"Un premier appartement, un atelier de céramique : deux projets de vie qui tiennent dans un trousseau de clés.",
+    context:"LCL accompagne les projets immobiliers et professionnels de ses clients. Le film devait parler de crédit sans montrer de chiffres, de taux ni d'agence bancaire.",
+    insight:"Derrière chaque prêt, il y a une porte que l'on ouvre pour la première fois. Celle d'un premier appartement, ou celle d'un atelier dont on rêvait depuis des années.",
+    idea:"Chaque clé ouvre une nouvelle histoire. La clé devient le symbole commun de tous les projets que la banque rend possibles.",
+    concept:"Deux récits se croisent. Un jeune couple visite un appartement vide, signe, puis s'installe au milieu des cartons. Une cadre tourne entre ses mains une tasse en céramique, puis quitte son bureau pour ouvrir son propre atelier. À la fin, les clés du couple reposent dans un bol sorti de cet atelier.",
+    da:"Lumière naturelle et chaude, matières brutes (parquet, argile, lin), cadres serrés sur les mains et les regards. Un format vertical pensé pour le mobile, qui se termine face aux toits de Paris.",
+    film:"Film de 37 secondes au format vertical 9:16. Signature : « Chaque clé ouvre une nouvelle histoire. »"
   },
   {
-    id:"cetelem", client:"CETELEM", title:"Pas besoin d'attendre.", cat:"Campagne", dur:"60 s",
-    media:"PROJECT_MEDIA_05", ratio:"r-169 m-r-45",
-    desc:"Une campagne autour de l'impatience, celle qui fait avancer.",
+    id:"cetelem", client:"CETELEM", title:"Pas besoin d'attendre.", cat:"Campagne d'affichage", dur:"", vertical:true,
+    media:"PROJECT_MEDIA_05", ratio:"r-45 m-r-45",
+    desc:"Le personnage de la marque s'invite au-dessus des toits de Paris.",
     context:"Le crédit à la consommation souffre d'une image de facilité. La campagne parle d'accès et de simplicité sans encourager l'impulsivité.",
     insight:"L'attente n'est pas toujours une vertu. Elle est parfois simplement un obstacle entre une personne et ce qui lui permettrait de vivre mieux, tout de suite.",
-    idea:"Pas besoin d'attendre. Une idée simple, déclinable sur tous les supports, qui transforme la rapidité en respect du temps des gens.",
-    concept:"Des scènes du quotidien où l'attente est montrée comme une perte : la file, le sablier, la pièce vide. Puis la coupe franche vers la vie qui reprend.",
-    da:"Cadres frontaux et symétriques, rythme de montage sec, typographie massive en surimpression. Un territoire visuel facilement reconnaissable en affichage.",
-    film:"Film manifeste de 60 secondes, trois films courts de 10 secondes et cinq visuels d'affichage.",
-    decl:["Affichage 4×3 — La salle d'attente","Social 9:16 — Le sablier","Social 1:1 — La pièce vide"]
+    idea:"Pas besoin d'attendre. Ce que l'on espère est souvent déjà là, juste au coin de la rue.",
+    concept:"Le personnage vert de la marque surgit au-dessus d'un immeuble haussmannien et regarde la rue en souriant. Une image qui se comprend en une seconde : la ville réelle, un seul élément inattendu, et beaucoup de ciel.",
+    da:"Une vraie rue parisienne en lumière de printemps, une contre-plongée qui donne au personnage toute sa taille, une matière de feutrine douce qui contraste avec la pierre. Un ballon jaune dans le ciel ajoute une note de légèreté.",
+    film:"Visuel d'affichage vertical, décliné pour la rue et les réseaux sociaux."
   }
 ];
 
@@ -842,12 +845,17 @@ function caseStudy(id){
   const i = PROJECTS.findIndex(p=>p.id===id);
   const p = PROJECTS[i];
   if (!p || !p.context) return PAGES.accueil();
-  const nxt = PROJECTS.filter(x=>x.context)[(PROJECTS.filter(x=>x.context).indexOf(p)+1) % PROJECTS.filter(x=>x.context).length];
+  const list = PROJECTS.filter(x=>x.context);
+  const nxt = list[(list.indexOf(p)+1) % list.length];
+  const has = s => !!(MEDIA[`${p.id}/${s}`] && MEDIA[`${p.id}/${s}`].src);
+  const V = !!p.vertical;   /* film ou visuel au format vertical */
   const block = (label, html, voice=false) => `
     <section class="cs-block wrap rv">
       <span class="label muted">${label}</span>
       <div class="body">${voice ? `<p class="voice" style="margin:0">${esc(html)}</p>` : `<p style="margin:0;font-size:1.1rem">${esc(html)}</p>`}</div>
     </section>`;
+  const gal = ["CASE_STUDY_GALLERY_01","CASE_STUDY_GALLERY_02","CASE_STUDY_GALLERY_03"].filter(has);
+  const galRatios = V ? ["r-45","r-45","r-45"] : ["r-cine","r-45","r-32"];
   return `
     <article>
       <header class="cs-hero wrap">
@@ -856,30 +864,34 @@ function caseStudy(id){
           <h1 class="display d-xl">${esc(p.title)}</h1>
           <span class="type label muted">${esc(p.cat)}</span>
         </div>
-        ${CaseStudyMedia(p.id,"CASE_STUDY_HERO_VIDEO","r-cine m-r-916",{eager:true,alt:`${p.client} — film principal`})}
+        ${V ? `<div class="cs-vert">${CaseStudyMedia(p.id,"CASE_STUDY_HERO_VIDEO","r-45",{eager:true,alt:`${p.client} — ${p.title}`})}</div>`
+            : CaseStudyMedia(p.id,"CASE_STUDY_HERO_VIDEO","r-cine m-r-916",{eager:true,alt:`${p.client} — film principal`})}
       </header>
 
       ${block("Contexte", p.context)}
       ${block("Vérité", p.insight, true)}
       ${block("Idée", p.idea, true)}
 
-      <div class="cs-pair wrap">
-        <div class="a rv">${CaseStudyMedia(p.id,"CASE_STUDY_IMAGE_01","r-32",{alt:`${p.client} — visuel`})}</div>
+      ${has("CASE_STUDY_IMAGE_01") && has("CASE_STUDY_IMAGE_02") ? `
+      <div class="cs-pair wrap${V ? " vert" : ""}">
+        <div class="a rv">${CaseStudyMedia(p.id,"CASE_STUDY_IMAGE_01",V?"r-45":"r-32",{alt:`${p.client} — visuel`})}</div>
         <div class="b rv">${CaseStudyMedia(p.id,"CASE_STUDY_IMAGE_02","r-45",{alt:`${p.client} — visuel`})}</div>
-      </div>
+      </div>` : ""}
 
       ${block("Concept créatif", p.concept)}
       ${block("Direction artistique", p.da)}
 
+      ${has("CASE_STUDY_VIDEO_01") ? `
       <section class="dark" style="padding-block:clamp(56px,8vw,120px)">
         <div class="wrap">
           <div class="cs-block" style="border-top:0;padding-top:0">
             <span class="label muted">Le film</span>
             <div class="body"><p style="margin:0;font-size:1.1rem">${esc(p.film)}</p></div>
           </div>
-          ${CaseStudyMedia(p.id,"CASE_STUDY_VIDEO_01","r-169",{alt:`${p.client} — film`})}
+          ${V ? `<div class="cs-vert">${CaseStudyMedia(p.id,"CASE_STUDY_VIDEO_01","r-916",{alt:`${p.client} — film`})}</div>`
+              : CaseStudyMedia(p.id,"CASE_STUDY_VIDEO_01","r-169",{alt:`${p.client} — film`})}
         </div>
-      </section>
+      </section>` : (p.film ? block("Format", p.film) : "")}
 
 ${p.decl ? `      <section class="wrap">
         <div class="cs-block" style="border-top:0">
@@ -891,17 +903,16 @@ ${p.decl ? `      <section class="wrap">
         </div>
       </section>` : ""}
 
+      ${gal.length ? `
       <section class="wrap">
         <div class="cs-block">
           <span class="label muted">Galerie</span>
           <div class="body"></div>
         </div>
-        <div class="cs-gallery">
-          <div class="g1 rv">${renderMedia(`${p.id}/CASE_STUDY_GALLERY_01`,"r-cine",{alt:"Galerie"})}</div>
-          <div class="g2 rv">${renderMedia(`${p.id}/CASE_STUDY_GALLERY_02`,"r-45",{alt:"Galerie"})}</div>
-          <div class="g3 rv">${renderMedia(`${p.id}/CASE_STUDY_GALLERY_03`,"r-32",{alt:"Galerie"})}</div>
+        <div class="${V ? "cs-decl" : "cs-gallery"}">
+          ${gal.map((s,k)=>`<div class="g${k+1} rv">${renderMedia(`${p.id}/${s}`, galRatios[k], {alt:`${p.client} — image du film`})}</div>`).join("")}
         </div>
-      </section>
+      </section>` : ""}
 
       <a class="next dark wrap" href="#projet-${nxt.id}">
         <span class="label">Projet suivant — ${esc(nxt.client)}</span>
