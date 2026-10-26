@@ -212,8 +212,6 @@ main{min-height:60vh}
 .offer-n{grid-column:1/2;font-size:.8rem;color:var(--grey);font-variant-numeric:tabular-nums;padding-top:.5em}
 .offer-head{grid-column:2/7;display:grid;gap:14px;align-content:start}
 .offer-head h3{margin:0}
-.offer-price{font-size:.95rem}
-.offer-price b{font-family:var(--f-display);font-variation-settings:"wdth" 112;font-weight:700;font-size:1.5rem;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
 .offer-body{grid-column:8/-1;display:grid;gap:22px;align-content:start}
 .offer-body .voice{font-size:clamp(1.4rem,2.2vw,2rem)}
 .incl{list-style:none;margin:0;padding:0;columns:2;column-gap:24px}
@@ -536,13 +534,13 @@ const CREATE = [
 ];
 
 const OFFERS = [
-  { n:"01", name:"Film court", price:"290 €", tag:"Une idée. Un film court.", desc:"Pour une prise de parole courte, avec une idée claire et une réalisation premium.",
+  { n:"01", name:"Film court", tag:"Une idée. Un film court.", desc:"Pour une prise de parole courte, avec une idée claire et une réalisation premium.",
     head:"Comprend", items:["réflexion créative","concept","direction artistique","écriture / structure","storyboard","production","montage","sound design / musique","format principal","adaptation secondaire"] },
-  { n:"02", name:"Film publicitaire", price:"690 €", tag:"Une idée conçue pour être retenue.", desc:"Une véritable création publicitaire pensée autour d'une idée forte.",
+  { n:"02", name:"Film publicitaire", tag:"Une idée conçue pour être retenue.", desc:"Une véritable création publicitaire pensée autour d'une idée forte.",
     head:"Comprend", items:["réflexion stratégique et créative","insight / vérité humaine","concept publicitaire","écriture","storyboard","direction artistique","production","montage","sound design / musique","film principal jusqu'à environ 60 secondes","formats 16:9 et 9:16","3 déclinaisons courtes"] },
-  { n:"03", name:"Campagne", price:"1 190 €", tag:"Une idée. Un territoire. Plusieurs expressions.", desc:"Une idée centrale développée en plusieurs prises de parole cohérentes.",
+  { n:"03", name:"Campagne", tag:"Une idée. Un territoire. Plusieurs expressions.", desc:"Une idée centrale développée en plusieurs prises de parole cohérentes.",
     head:"Comprend", items:["réflexion stratégique","insight","concept central","direction artistique","territoire visuel","1 film principal jusqu'à 60 secondes","3 films courts","5 visuels publicitaires","adaptations 16:9 / 9:16 / 1:1","sound design / musique"] },
-  { n:"04", name:"Sur mesure", price:"1 690 €", tag:"Nous construisons le dispositif adapté à votre ambition.", desc:"Pour les projets dont l'ampleur demande une réponse spécifique.",
+  { n:"04", name:"Sur mesure", tag:"Nous construisons le dispositif adapté à votre ambition.", desc:"Pour les projets dont l'ampleur demande une réponse spécifique.",
     head:"Pour", items:["campagnes nationales","lancement de marque","repositionnement","campagnes importantes","plusieurs films","dispositifs multi-supports","projets internationaux","projets nécessitant une production spécifique"], cta:true }
 ];
 
@@ -715,7 +713,7 @@ const PAGES = {
     <section class="p-hero wrap enter">
       <span class="label muted">Services</span>
       <h1 class="display d-xl">Ce que nous pouvons créer.</h1>
-      <p class="lead muted">Nos offres correspondent à l'ampleur de la production. Le type de film, lui, dépend de ce que votre marque a à dire.</p>
+      <p class="lead muted">Chaque projet commence par un échange, puis une proposition construite pour votre marque. Le type de film dépend de ce que votre marque a à dire.</p>
     </section>
 
     <section class="wrap" aria-label="Offres">
@@ -725,7 +723,6 @@ const PAGES = {
             <span class="offer-n">${o.n}</span>
             <div class="offer-head">
               <h2 class="display d-l">${esc(o.name)}</h2>
-              <span class="offer-price muted">À partir de <b style="color:var(--ink)">${o.price}</b></span>
             </div>
             <div class="offer-body">
               <p class="voice"><em>${esc(o.tag)}</em></p>
@@ -824,11 +821,10 @@ const PAGES = {
         <div class="field full"><label for="f-bud">Budget indicatif</label>
           <select id="f-bud" name="budget">
             <option value="">Sélectionner</option>
-            <option>Moins de 500 €</option>
-            <option>500 – 1 000 €</option>
-            <option>1 000 – 2 000 €</option>
-            <option>2 000 – 5 000 €</option>
-            <option>Plus de 5 000 €</option>
+            <option>Moins de 3 000 €</option>
+            <option>3 000 – 6 000 €</option>
+            <option>6 000 – 15 000 €</option>
+            <option>Plus de 15 000 €</option>
             <option>À définir ensemble</option>
           </select>
         </div>
